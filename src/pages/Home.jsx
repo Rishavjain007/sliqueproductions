@@ -52,7 +52,7 @@ const Home = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="text-4xl sm:text-6xl font-extrabold mb-4"
+            className="text-1xl sm:text-6xl font-extrabold mb-4"
           >
             SliqueProductions
           </motion.h1>
@@ -291,7 +291,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
 
       {/* <section className="py-16 bg-gradient-to-r from-gray-50 to-pink-50">
         <div className="max-w-4xl mx-auto px-6">
