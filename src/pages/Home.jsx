@@ -52,7 +52,7 @@ const Home = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="text-1xl sm:text-6xl font-extrabold mb-4"
+            className="text-3xl sm:text-6xl font-extrabold mb-4"
           >
             SliqueProductions
           </motion.h1>
