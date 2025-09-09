@@ -3,16 +3,10 @@ import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { useTheme } from "../hooks/useTheme";
 
-// Accept darkMode prop for theme switching
-const Contact = ({ darkMode }) => {
-  const accent = "#673de6";
-  const bg = darkMode ? "#000" : "#fff";
-  const cardBg = darkMode ? "#111" : "#fff";
-  const border = darkMode ? "#673de6" : "#000";
-  const text = darkMode ? "#fff" : "#000";
-  const inputBg = darkMode ? "#181818" : "#fff";
-  const inputText = darkMode ? "#fff" : "#000";
+const Contact = () => {
+  const { theme } = useTheme();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -41,9 +35,9 @@ const Contact = ({ darkMode }) => {
             icon: "success",
             title: "Message Sent!",
             text: `Thank you, ${formData.name}. We'll get back to you soon.`,
-            confirmButtonColor: accent,
-            background: cardBg,
-            color: text,
+            confirmButtonColor: theme.accent,
+            background: theme.cardBg,
+            color: theme.text,
           });
           setFormData({
             name: "",
@@ -57,9 +51,9 @@ const Contact = ({ darkMode }) => {
             icon: "error",
             title: "Oops...",
             text: "Failed to send message. Please try again!",
-            confirmButtonColor: accent,
-            background: cardBg,
-            color: text,
+            confirmButtonColor: theme.accent,
+            background: theme.cardBg,
+            color: theme.text,
           });
           console.error("EmailJS Error:", error);
         }
@@ -69,7 +63,7 @@ const Contact = ({ darkMode }) => {
   return (
     <div
       className="w-full py-10 px-4 sm:py-30 py-20 sm:px-6 lg:py-30 lg:px-8 overflow-x-hidden transition-colors duration-300"
-      style={{ background: bg, color: text }}
+      style={{ background: theme.bg, color: theme.text }}
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -79,13 +73,13 @@ const Contact = ({ darkMode }) => {
       >
         <h1
           className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
-          style={{ color: text }}
+          style={{ color: theme.text }}
         >
           Contact Us
         </h1>
         <p
           className="max-w-2xl mx-auto text-base sm:text-lg"
-          style={{ color: text }}
+          style={{ color: theme.text }}
         >
           Have questions or want to work with us? Send us a message and we’ll
           get back to you as soon as possible.
@@ -103,20 +97,23 @@ const Contact = ({ darkMode }) => {
           <div
             className="flex items-center p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-lg transition"
             style={{
-              background: cardBg,
-              border: `1.5px solid ${border}`,
-              color: text,
+              background: theme.cardBg,
+              border: `1.5px solid ${theme.cardBorder}`,
+              color: theme.text,
             }}
           >
-            <FaPhoneAlt className="text-2xl mr-4" style={{ color: accent }} />
+            <FaPhoneAlt
+              className="text-2xl mr-4"
+              style={{ color: theme.accent }}
+            />
             <div>
               <h3
                 className="font-semibold text-base sm:text-lg mb-1"
-                style={{ color: text }}
+                style={{ color: theme.text }}
               >
                 Phone
               </h3>
-              <p className="text-sm sm:text-base" style={{ color: text }}>
+              <p className="text-sm sm:text-base" style={{ color: theme.text }}>
                 +91 94623 39166
               </p>
             </div>
@@ -124,20 +121,23 @@ const Contact = ({ darkMode }) => {
           <div
             className="flex items-center p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-lg transition"
             style={{
-              background: cardBg,
-              border: `1.5px solid ${border}`,
-              color: text,
+              background: theme.cardBg,
+              border: `1.5px solid ${theme.cardBorder}`,
+              color: theme.text,
             }}
           >
-            <FaEnvelope className="text-2xl mr-4" style={{ color: accent }} />
+            <FaEnvelope
+              className="text-2xl mr-4"
+              style={{ color: theme.accent }}
+            />
             <div>
               <h3
                 className="font-semibold text-base sm:text-lg mb-1"
-                style={{ color: text }}
+                style={{ color: theme.text }}
               >
                 Email
               </h3>
-              <p className="text-sm sm:text-base" style={{ color: text }}>
+              <p className="text-sm sm:text-base" style={{ color: theme.text }}>
                 hello@sliqueproductions.com
               </p>
             </div>
@@ -145,23 +145,23 @@ const Contact = ({ darkMode }) => {
           <div
             className="flex items-center p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-lg transition"
             style={{
-              background: cardBg,
-              border: `1.5px solid ${border}`,
-              color: text,
+              background: theme.cardBg,
+              border: `1.5px solid ${theme.cardBorder}`,
+              color: theme.text,
             }}
           >
             <FaMapMarkerAlt
               className="text-2xl mr-4"
-              style={{ color: accent }}
+              style={{ color: theme.accent }}
             />
             <div>
               <h3
                 className="font-semibold text-base sm:text-lg mb-1"
-                style={{ color: text }}
+                style={{ color: theme.text }}
               >
                 Address
               </h3>
-              <p className="text-sm sm:text-base" style={{ color: text }}>
+              <p className="text-sm sm:text-base" style={{ color: theme.text }}>
                 Kotkasim, Alwar, Rajasthan, India
               </p>
             </div>
@@ -176,7 +176,7 @@ const Contact = ({ darkMode }) => {
           onSubmit={handleSubmit}
           className="rounded-lg shadow-sm space-y-4 sm:space-y-6"
           style={{
-            color: text,
+            color: theme.text,
           }}
         >
           <input
@@ -188,9 +188,9 @@ const Contact = ({ darkMode }) => {
             required
             className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 transition"
             style={{
-              background: inputBg,
-              color: inputText,
-              border: `1.2px solid ${border}`,
+              background: theme.faqCard,
+              color: theme.text,
+              border: `1.2px solid ${theme.cardBorder}`,
               outline: "none",
             }}
           />
@@ -203,9 +203,9 @@ const Contact = ({ darkMode }) => {
             required
             className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 transition"
             style={{
-              background: inputBg,
-              color: inputText,
-              border: `1.2px solid ${border}`,
+              background: theme.faqCard,
+              color: theme.text,
+              border: `1.2px solid ${theme.cardBorder}`,
               outline: "none",
             }}
           />
@@ -220,9 +220,9 @@ const Contact = ({ darkMode }) => {
             title="Please enter a valid 10-digit phone number"
             className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 transition"
             style={{
-              background: inputBg,
-              color: inputText,
-              border: `1.2px solid ${border}`,
+              background: theme.faqCard,
+              color: theme.text,
+              border: `1.2px solid ${theme.cardBorder}`,
               outline: "none",
             }}
           />
@@ -235,9 +235,9 @@ const Contact = ({ darkMode }) => {
             required
             className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 transition"
             style={{
-              background: inputBg,
-              color: inputText,
-              border: `1.2px solid ${border}`,
+              background: theme.faqCard,
+              color: theme.text,
+              border: `1.2px solid ${theme.cardBorder}`,
               outline: "none",
             }}
           ></textarea>
@@ -245,9 +245,9 @@ const Contact = ({ darkMode }) => {
             type="submit"
             className="w-full py-3 rounded-lg font-semibold transition text-sm sm:text-base"
             style={{
-              background: accent,
+              background: theme.accent,
               color: "#fff",
-              border: `2px solid ${accent}`,
+              border: `2px solid ${theme.accent}`,
             }}
           >
             Send Message
