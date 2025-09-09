@@ -327,15 +327,15 @@ const Navbar = () => {
   ];
 
   const serviceLinks = [
-    { name: "All Services", path: "/services/all-services" },
-    { name: "Wedding", path: "/services/wedding" },
-    { name: "Prewedding", path: "/services/prewedding" },
-    { name: "Event & Corporate", path: "/services/event-corporate" },
-    { name: "Product", path: "/services/product" },
-    { name: "Fashion", path: "/services/fashion" },
-    { name: "Real estate", path: "/services/real-estate" },
-    { name: "Baby shoot", path: "/services/baby-shoot" },
-    { name: "Maternity", path: "/services/maternity" },
+    { name: "All Services", path: "/all-services" },
+    { name: "Wedding", path: "/wedding" },
+    { name: "Prewedding", path: "/prewedding" },
+    { name: "Event & Corporate", path: "/event-corporate" },
+    { name: "Product", path: "/product" },
+    { name: "Fashion", path: "/fashion" },
+    { name: "Real estate", path: "/real-estate" },
+    { name: "Baby shoot", path: "/baby-shoot" },
+    { name: "Maternity", path: "/maternity" },
   ];
 
   const navBg = darkMode ? "#000" : "#fff";

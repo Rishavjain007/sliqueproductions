@@ -685,7 +685,7 @@ import FAQ from "../Home Components/FAQ";
 import Servicess from "../Home Components/Services";
 
 const Home = () => (
-  <div>
+  <div style={{ overflowX: "hidden" }}>
     <Hero />
     <Servicess />
     <Slider />
