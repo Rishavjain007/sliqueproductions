@@ -28,10 +28,7 @@ const Gallery = () => {
         transition={{ duration: 1 }}
         className="max-w-7xl mx-auto px-6 text-center"
       >
-        <h2
-          className="text-3xl font-bold mb-8"
-          style={{ color: theme.accent }}
-        >
+        <h2 className="text-3xl font-bold mb-8" style={{ color: theme.accent }}>
           Our Gallery
         </h2>
         <Swiper

@@ -21,7 +21,7 @@ const themeColors = {
     accent: "#B18652",
     cardBg: "#111",
     cardBorder: "#B18652",
-    sectionGradient: "linear-gradient(90deg, #000 60%, #B186527c 100%)",
+    sectionGradient: "linear-gradient(90deg, #000 70%, #b18652 100%)",
     Title: "#fff",
     heroOverlay: "rgba(82, 77, 35, 0.45)",
     faqCard: "#181818",

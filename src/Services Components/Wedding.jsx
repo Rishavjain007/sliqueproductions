@@ -3,6 +3,9 @@ import ServiceCard from "./ServiceCard";
 
 const images = [
   "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
 ];
 const description =
   "From candid moments to grand celebrations, our wedding photography captures the true essence of your special day. We blend creative storytelling with timeless elegance, ensuring each memory is preserved forever.";

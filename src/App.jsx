@@ -6,24 +6,29 @@ import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import ServiceList from "./Services/ServiceList";
-import Prewedding from "./Services/Prewedding.jsx,EventCorporate.jsx,Product.jsx,Fashion.jsx,RealEstate.jsx,BabyShoot.jsx,Maternity";
-import Wedding from "./Services/Wedding.jsx,Prewedding.jsx,EventCorporate.jsx,Product.jsx,Fashion.jsx,RealEstate.jsx,BabyShoot.jsx,Maternity";
-import EventCorporate from "./Services/EventCorporate";
-import Product from "./Services/Product";
-import Fashion from "./Services/Fashion";
-import RealEstate from "./Services/RealEstate";
-import BabyShoot from "./Services/BabyShoot";
-import Maternity from "./Services/Maternity";
+import ServiceList from "./Services Components/ServiceList.jsx";
+import Prewedding from "./Services Components/Prewedding.jsx";
+import Wedding from "./Services Components/Wedding.jsx";
+import EventCorporate from "./Services Components/EventCorporate.jsx";
+import Product from "./Services Components/Product.jsx";
+import Fashion from "./Services Components/Fashion.jsx";
+import RealEstate from "./Services Components/RealEstate.jsx";
+import BabyShoot from "./Services Components/BabyShoot.jsx";
+import Maternity from "./Services Components/Maternity.jsx";
+// import Gallery from "./pages/Gallery.jsx";
+import GalleryPage from "./pages/GalleryPage.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 const App = () => {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <Navbar />
         <div style={{ paddingTop: "60px" }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/all-services" element={<ServiceList />} />

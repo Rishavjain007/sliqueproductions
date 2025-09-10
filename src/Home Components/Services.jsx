@@ -1,6 +1,8 @@
 import React from "react";
 import { FaCogs, FaLightbulb, FaChartLine, FaMobileAlt } from "react-icons/fa";
 import { useTheme } from "../hooks/useTheme";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Servicess = () => {
   const { theme } = useTheme();
@@ -57,18 +59,24 @@ const Servicess = () => {
         ))}
       </div>
       <div className="mt-8 text-center">
-        <button
-          className="px-8 py-3 rounded-full font-bold transition-transform transform hover:scale-105 shadow-lg"
+        <motion.button
+          whileHover={{
+            scale: 1.05,
+            backgroundColor: theme.bg,
+            color: theme.accent,
+            border: `2px solid ${theme.accent}`,
+          }}
+          className="px-7 py-3 rounded-full font-bold shadow transition"
           style={{
             background: theme.accent,
-            color: "#fff",
+            color: theme.text,
+            border: `2px solid ${theme.accent}`,
+            letterSpacing: "1.2px",
             fontSize: "1rem",
-            letterSpacing: ".03em",
-            boxShadow: "0 6px 24px #B1865255",
           }}
         >
-          View All Services
-        </button>
+          <Link to="/all-services">Explor All Service</Link>
+        </motion.button>
       </div>
     </section>
   );

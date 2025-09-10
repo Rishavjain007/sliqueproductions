@@ -683,18 +683,48 @@ import AboutUs from "../Home Components/AboutUs";
 import Testimonials from "../Home Components/Testimonials";
 import FAQ from "../Home Components/FAQ";
 import Servicess from "../Home Components/Services";
+import { Link } from "react-router-dom";
+import { useTheme } from "../hooks/useTheme";
+import { motion } from "framer-motion";
 
-const Home = () => (
-  <div style={{ overflowX: "hidden" }}>
-    <Hero />
-    <Servicess />
-    <Slider />
-    <SpecialServices />
-    <Gallery />
-    <AboutUs />
-    <Testimonials />
-    <FAQ />
-  </div>
-);
+const Home = () => {
+  const { theme } = useTheme();
+  return (
+    <div
+      style={{ overflowX: "hidden", background: theme.bg, color: theme.text }}
+    >
+      <Hero />
+      <Servicess />
+      <Slider />
+      <SpecialServices />
+      <Gallery />
+      <motion.button
+        whileHover={{
+          scale: 1.05,
+          backgroundColor: theme.bg,
+          color: theme.accent,
+          border: `2px solid ${theme.accent}`,
+        }}
+        className="px-7 py-3 rounded-full font-bold shadow transition"
+        style={{
+          background: theme.accent,
+          color: theme.text,
+          border: `2px solid ${theme.accent}`,
+          letterSpacing: "1.2px",
+          fontSize: "1rem",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "30px auto",
+        }}
+      >
+        <Link to="/gallery">Explor My Gallery</Link>
+      </motion.button>
+      <AboutUs />
+      <Testimonials />
+      <FAQ />
+    </div>
+  );
+};
 
 export default Home;
